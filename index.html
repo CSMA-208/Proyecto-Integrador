@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda Nébula: audífonos, periféricos y accesorios tecnológicos con envío rápido.">
+  <title>Tienda Nébula | Tecnología y accesorios</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#productos">Saltar al catálogo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo">
+        <img src="img/logo.jpg" alt="" width="36" height="36">
+        <span>Nébula</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">☰</button>
+      <nav id="menu" class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#carrito" class="cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-content">
+        <h1>Tecnología que acompaña tu día a día</h1>
+        <p>Audífonos, periféricos y accesorios seleccionados por calidad y precio. Envío en 48 horas y garantía de 12 meses.</p>
+        <a href="#productos" class="btn btn-primary">Ver catálogo</a>
+      </div>
+    </section>
+
+    <section class="container benefits" aria-label="Beneficios de la tienda">
+      <article class="card benefit">
+        <h3>🚚 Envío rápido</h3>
+        <p>Despachamos en 48 horas hábiles a todo el país.</p>
+      </article>
+      <article class="card benefit">
+        <h3>🛡️ Garantía de 12 meses</h3>
+        <p>Cambio o reparación si tu producto presenta fallas de fábrica.</p>
+      </article>
+      <article class="card benefit">
+        <h3>💬 Atención personalizada</h3>
+        <p>Te asesoramos para elegir el accesorio ideal para tu necesidad.</p>
+      </article>
+    </section>
+
+    <section id="productos" class="container">
+      <h2>Catálogo</h2>
+      <div class="toolbar">
+        <label for="buscar" class="visually-hidden">Buscar productos</label>
+        <input type="search" id="buscar" placeholder="Buscar producto...">
+        <div class="filters" role="group" aria-label="Filtrar por categoría">
+          <button class="filter-btn active" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="filter-btn" data-filter="audio" aria-pressed="false">Audio</button>
+          <button class="filter-btn" data-filter="periferico" aria-pressed="false">Periféricos</button>
+          <button class="filter-btn" data-filter="accesorio" aria-pressed="false">Accesorios</button>
+        </div>
+      </div>
+      <div id="lista-productos" class="product-grid"></div>
+      <p id="sin-resultados" class="empty" hidden>No encontramos productos con esa búsqueda.</p>
+    </section>
+
+    <section id="carrito" class="container cart">
+      <h2>Tu carrito</h2>
+      <ul id="cart-items" class="cart-items"></ul>
+      <p id="cart-vacio" class="empty">Tu carrito está vacío.</p>
+      <div class="cart-footer">
+        <p>Total: <strong id="cart-total">$0</strong></p>
+        <button id="vaciar" class="btn btn-secondary" type="button">Vaciar carrito</button>
+      </div>
+    </section>
+
+    <section id="nosotros" class="container about">
+      <h2>Sobre nosotros</h2>
+      <p>Nébula nació con una idea simple: que cualquier persona pueda acceder a tecnología útil, bien diseñada y a un precio justo. Trabajamos solo con marcas que cumplen estándares de calidad y revisamos cada producto antes de enviarlo.</p>
+    </section>
+
+    <section id="contacto" class="container">
+      <h2>Contáctanos</h2>
+      <form id="form-contacto" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+          <small class="error" id="error-nombre" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <small class="error" id="error-email" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto">
+            <option value="consulta">Consulta de producto</option>
+            <option value="pedido">Estado de un pedido</option>
+            <option value="garantia">Garantía</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <small class="error" id="error-mensaje" aria-live="polite"></small>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <p id="form-msg" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Tienda Nébula. Todos los derechos reservados.</p>
+      <p>Pagos seguros · Envíos a todo el país</p>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
